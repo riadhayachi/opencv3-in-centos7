@@ -37,10 +37,10 @@ OCV_PYTHON="-DBUILD_opencv_python3=1 -DPYTHON3_EXECUTABLE=$PYTHON -DPYTHON3_INCL
 
 echo $OCV_PYTHON
 
-git clone https://github.com/Itseez/opencv_contrib
-cd opencv_contrib
-git checkout HEAD
-cd ..
+# git clone https://github.com/Itseez/opencv_contrib
+# cd opencv_contrib
+# git checkout HEAD
+# cd ..
 
 cmake .. -G"$CMAKE_GENERATOR"                                            \
     $TBB                                                                 \
@@ -65,11 +65,11 @@ cmake .. -G"$CMAKE_GENERATOR"                                            \
     -DWITH_VTK=0                                                         \
     -DWITH_QT=0                                                          \
     -DINSTALL_C_EXAMPLES=0                                               \
-    -DOPENCV_EXTRA_MODULES_PATH="opencv_contrib/modules"                 \
     -DBUILD_opencv_dnn=0 \
     -DCMAKE_SKIP_RPATH:bool=ON                                           \
     -DCMAKE_INSTALL_PREFIX=$PREFIX
-
+    #-DOPENCV_EXTRA_MODULES_PATH="opencv_contrib/modules"                 \
+    
 make -j${CPU_COUNT}
 make install
     
