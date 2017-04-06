@@ -1,6 +1,6 @@
 package:
-  name: opencv3
-  version: 3.2.0
+  name: cv2
+  version: "3.2.0"
 
 source:
   git_url: https://github.com/opencv/opencv.git
@@ -29,10 +29,10 @@ requirements:
    - hdf5 1.8.*  # [osx]
    - tbb 4.3*    # [osx]
 
-test:
-  imports:
-    - cv2
-    #- cv2.xfeatures2d
+ test:
+   imports:
+     - cv2
+#     #- cv2.xfeatures2d
 
 about:
   home: http://opencv.org/
