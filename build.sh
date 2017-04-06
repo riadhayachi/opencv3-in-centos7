@@ -13,8 +13,8 @@ if [ "${SHORT_OS_STR:0:5}" == "Linux" ]; then
     IS_OSX=0
     # There's a bug with CMake at the moment whereby it can't download
     # using HTTPS - so we use curl to download the IPP library
-    mkdir -p $SRC_DIR/3rdparty/ippicv/downloads/linux-808b791a6eac9ed78d32a7666804320e
-    curl -L https://raw.githubusercontent.com/Itseez/opencv_3rdparty/81a676001ca8075ada498583e4166079e5744668/ippicv/ippicv_linux_20151201.tgz -o $SRC_DIR/3rdparty/ippicv/downloads/linux-808b791a6eac9ed78d32a7666804320e/ippicv_linux_20151201.tgz
+    #mkdir -p $SRC_DIR/3rdparty/ippicv/downloads/linux-808b791a6eac9ed78d32a7666804320e
+    #curl -L https://raw.githubusercontent.com/Itseez/opencv_3rdparty/81a676001ca8075ada498583e4166079e5744668/ippicv/ippicv_linux_20151201.tgz -o $SRC_DIR/3rdparty/ippicv/downloads/linux-808b791a6eac9ed78d32a7666804320e/ippicv_linux_20151201.tgz
 fi
 if [ "${SHORT_OS_STR}" == "Darwin" ]; then
     IS_OSX=1
@@ -27,7 +27,7 @@ fi
 
 echo ">>>>>>>>>>>>" $PY_VER $PY_VER_M 
 PY_VER_M="${PY_VER}m"
-OCV_PYTHON="-DBUILD_opencv_python3=1 -DPYTHON3_EXECUTABLE=$PYTHON -DPYTHON3_INCLUDE_DIR=$PREFIX/include/python${PY_VER_M} -DPYTHON3_LIBRARY=${PREFIX}/lib/libpython${PY_VER_M}.${DYNAMIC_EXT}"
+OCV_PYTHON="-DBUILD_opencv_python2=0 -DBUILD_opencv_python3=1 -DPYTHON3_EXECUTABLE=$PYTHON -DPYTHON3_INCLUDE_DIR=$PREFIX/include/python${PY_VER_M} -DPYTHON3_LIBRARY=${PREFIX}/lib/libpython${PY_VER_M}.${DYNAMIC_EXT}"
 # OCV_PYTHON="-DBUILD_opencv_python3=1 -DBUILD_opencv_python2=0 -DPYTHON_EXECUTABLE=`python3 -c "import sys; print(sys.executable)"`
 # -DPYTHON3_EXECUTABLE=`python3 -c "import sys; print(sys.executable)"` 
 # -DPYTHON3_INCLUDE_DIR=`python3 -c "import sysconfig; print(sysconfig.get_path('platinclude'))"`
