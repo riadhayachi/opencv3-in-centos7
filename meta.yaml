@@ -32,7 +32,7 @@ requirements:
  test:
    imports:
      - cv2
-#     #- cv2.xfeatures2d
+     #- cv2.xfeatures2d
 
 about:
   home: http://opencv.org/
