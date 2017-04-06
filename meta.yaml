@@ -22,10 +22,10 @@ requirements:
    - hdf5 1.8.*  # [osx]
    - tbb 4.3*    # [osx]
 
-test:
-  imports:
-    - cv2
-    - cv2.xfeatures2d
+# test:
+#   imports:
+#     - cv2
+#     - cv2.xfeatures2d
 
 about:
   home: http://opencv.org/
