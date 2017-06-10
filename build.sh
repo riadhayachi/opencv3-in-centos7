@@ -27,7 +27,7 @@ fi
 
 echo ">>>>>>>>>>>>" $PY_VER $PY_VER_M 
 PY_VER_M="${PY_VER}m"
-OCV_PYTHON="-DBUILD_opencv_python2=0 -DBUILD_opencv_python='' -DBUILD_opencv_python3=1 -DPYTHON3_EXECUTABLE=$PYTHON -DPYTHON_DEFAULT_EXECUTABLE=$PYTHON DPYTHON3_INCLUDE_DIR=$PREFIX/include/python${PY_VER_M} -DPYTHON3_LIBRARY=${PREFIX}/lib/libpython${PY_VER_M}m.${DYNAMIC_EXT}"
+OCV_PYTHON="-DBUILD_opencv_python2=0 -DBUILD_opencv_python3=1 -DPYTHON_DEFAULT_EXECUTABLE=$PYTHON DPYTHON3_INCLUDE_DIR=$PREFIX/include/python${PY_VER_M} -DPYTHON3_LIBRARY=${PREFIX}/lib/libpython${PY_VER_M}m.${DYNAMIC_EXT}"
 # OCV_PYTHON="-DBUILD_opencv_python3=1 -DBUILD_opencv_python2=0 -DPYTHON_EXECUTABLE=`python3 -c "import sys; print(sys.executable)"`
 # -DPYTHON3_EXECUTABLE=`python3 -c "import sys; print(sys.executable)"` 
 # -DPYTHON3_INCLUDE_DIR=`python3 -c "import sysconfig; print(sysconfig.get_path('platinclude'))"`
