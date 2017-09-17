@@ -7,7 +7,7 @@ mkdir ~/ffmpeg_sources
 
 #installing YAM
 cd ~/ffmpeg_sources
-git clone --depth 1 git://github.com/yasm/yasm.git
+git clone git://github.com/yasm/yasm.git
 cd yasm
 autoreconf -fiv
 ./configure --prefix="$HOME/ffmpeg_build" --bindir="$HOME/bin"
@@ -17,7 +17,7 @@ echo
 
 #x264
 cd ~/ffmpeg_sources
-git clone --depth 1 git://git.videolan.org/x264
+git clone https://github.com/mirror/x264.git
 cd x264
 PKG_CONFIG_PATH="$HOME/ffmpeg_build/lib/pkgconfig" ./configure --prefix="$HOME/ffmpeg_build" --bindir="$HOME/bin" --enable-static
 make
@@ -35,8 +35,8 @@ echo
 
 #libfdk_aac -> AAC audio encoder. 
 cd ~/ffmpeg_sources
-git clone --depth 1 git://git.code.sf.net/p/opencore-amr/fdk-aac
-cd fdk-aac
+git clone https://github.com/riadhayachi/fdk-aac-distrotech-fdk-aac.git
+cd fdk-aac-distrotech-fdk-aac
 autoreconf -fiv
 ./configure --prefix="$HOME/ffmpeg_build" --disable-shared
 make
@@ -55,7 +55,7 @@ echo
 
 #libopus Opus audio decoder and encoder. 
 cd ~/ffmpeg_sources
-git clone http://git.opus-codec.org/opus.git
+git clone https://github.com/xiph/opus.git
 cd opus
 autoreconf -fiv
 PKG_CONFIG_PATH="$HOME/ffmpeg_build/lib/pkgconfig" ./configure --prefix="$HOME/ffmpeg_build" --disable-shared
